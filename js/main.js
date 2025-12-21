@@ -1,3 +1,4 @@
+
 const slider = document.getElementById("slider");
 const sliders = slider.children.length;
 let index = 0;
