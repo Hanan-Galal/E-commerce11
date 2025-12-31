@@ -1,17 +1,20 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
+      
   
-    <title>Skincare Store</title>
+
   </head>
 
   <body>
-    <header class="bg-neutral-100">
-      <div class="w-7xl mx-auto">
-         <nav class="flex items-center justify-between p-3 ">
+    <header class="  bg-neutral-100 ">
+      
+      <div class="w-7xl mx-auto"> 
+         <!--start-navbar-->
+        <nav class="flex items-center justify-between p-3 ">
           <a href="./index.html">
               <img
             src="../images/logo-skincare.jpg"
@@ -24,14 +27,14 @@
           >
             <li>
               <a
-                href="#"
+                href="index.html"
                 class="hover:bg-pink-100 hover:text-neutral-500 p-3 rounded-md"
                 >Home</a
               >
             </li>
             <li>
               <a
-                href="./products.html"
+                href="#"
                 class="hover:bg-pink-100 hover:text-neutral-500 p-3 rounded-md"
                 >products</a
               >
@@ -65,7 +68,7 @@
                 login
               </a>
             </li>
-            <li>
+              <li>
               <a
                 href="./cart.html"
                 class="hover:bg-pink-100 hover:text-neutral-500 p-3 rounded-md flex justify-center items-center gap-2"
@@ -91,68 +94,34 @@
             </li>
           </ul>
         </nav>
+        <!--end navbar-->
+        
+        
 
-        <div
-          class="relative p-4 h-[700px] overflow-hidden rounded-xl shadow-lg"
-        >
-          <div
-            id="slider"
-            class="flex transition-transform duration-500 ease-in-out"
-          >
-            <img
-              src="../images/header2.png.jpg"
-              class="w-full h-[700px] object-cover flex-shrink-0"
-            />
-            <img
-              src="../images/header3.png.jpg"
-              class="w-full h-[700px] object-cover flex-shrink-0"
-            />
-            <img
-              src="../images/header4.png.jpg"
-              class="w-full h-[700px] object-cover flex-shrink-0"
-            />
-            <img
-              src="../images/header5.png.jpg"
-              class="w-full h-[700px] object-cover flex-shrink-0"
-            />
-          </div>
 
-          <button
-            id="prevBtn"
-            class="absolute top-1/2 left-8 -translate-y-1/2 bg-white px-4 py-2 rounded-full"
-          >
-            <
-          </button>
-
-          <button
-            id="nextBtn"
-            class="absolute top-1/2 right-8 -translate-y-1/2 bg-white px-4 py-2 rounded-full"
-          >
-            >
-          </button>
-        </div>
-      </div>
+      </div></div>
     </header>
 
     <main>
-      
+        <section id="products-list" class="p-5 text-center my-5 ">
+        <h2 class="text-4xl font-bold text-gray-500">Our Products</h2>
+        <div class="categries flex-row justify-center items-center gap-8 my-6 p-4 text-lg font-medium text-neutral-500">
+            <button data-category="all" class="bg-pink-100 px-4 py-2 m-4 rounded-md">All</button>
+<button data-category="skincare" class="bg-pink-100 px-4 py-2 m-4 rounded-md">Skincare</button>
+<button data-category="bodycare" class="bg-pink-100 px-4 py-2 m-4 rounded-md">Bodycare</button>
+<button data-category="haircare" class="bg-pink-100 px-4 py-2 m-4 rounded-md">Haircare</button>
 
-      <section  id="offers-section"
-      class="w-7xl mx-auto p-5 text-center">
-        <h2 class="text-5xl font-bold text-gray-500">Offers</h2>
-        <p class="text-xl text-gray-400 my-5">
-          Made using clean, non-toxic ingredients.
-        </p>
-
-        <div
+            
+        </div>
+ <div
           id="products-container"
-          class="flex justify-center gap-8 flex-wrap"
-        ></div>
-        
-      </section>
-    </main>
-      <script type="module" src="../js/main.js"></script>
-        
-  </body>
+          class="flex justify-center gap-8 flex-wrap"></div>
+    </section>
 
+    </main>
+     <script type="module" src="../js/cart.js" ></script>
+      <script type="module" src="../js/products.js" ></script>
+      
+ 
+  </body>
 </html>

@@ -1,5 +1,7 @@
 import { products } from "./data.js";
 import { addToCart} from "./cart.js";
+import { updateCartCount } from "./cart.js";
+
   
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -40,10 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
       <button class="text-white bg-gray-500 rounded p-2 ">Add to Cart</button>
     `;
 
-    // EventListener for button
+    // EventListener for button (add to cart, update cart count)
     const addButton = productCard.querySelector("button");
-    addButton.addEventListener("click", () => addToCart(product.id));
+  addButton.addEventListener("click", () => {
+  addToCart(product.id);
+  updateCartCount();
+});
+
+
+
 
     productsContainer.appendChild(productCard);
   });
+  updateCartCount();
 });

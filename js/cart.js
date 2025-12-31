@@ -42,6 +42,7 @@ export const addToCart=(productId) =>{
   }
   localStorage.setItem('cart', JSON.stringify(cart));
   displayCart();
+  updateCartCount();
 }
 
 export const removeProduct=(productId) =>{
@@ -54,7 +55,20 @@ export const removeProduct=(productId) =>{
     }
     localStorage.setItem('cart', JSON.stringify(cart));
   displayCart();
+  updateCartCount() ;
     
   }
 }
-document.addEventListener("DOMContentLoaded", () => displayCart());
+    //
+export function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const totalCount = cart.reduce((sum, product) => sum + product.quantity, 0);
+  const cartCountElement = document.getElementById("cart-count");
+  cartCountElement.textContent = totalCount;
+  if (totalCount >0) {
+    cartCountElement.style.display = "inline-block";
+  } else {
+    cartCountElement.style.display = "none";
+  }
+}  
+  document.addEventListener("DOMContentLoaded", () => displayCart());
